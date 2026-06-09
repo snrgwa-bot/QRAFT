@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QRAFT — Support</title>
+<meta name="description" content="Help, FAQ, and contact for QRAFT, the privacy-first QR code generator for iOS.">
+<style>
+  :root {
+    --bg:#0C0D10; --panel:#15171D; --panel2:#1C1F27; --line:#2A2E39;
+    --txt:#EEF1F6; --muted:#878D9C; --faint:#5B6172; --acid:#C6F24E; --onacid:#10130A;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:var(--bg); color:var(--txt); line-height:1.65; }
+  a { color:var(--acid); text-decoration:none; }
+  .mono { font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:22px 0;
+           max-width:1000px; margin:0 auto; padding-left:20px; padding-right:20px; }
+  .brand { display:flex; align-items:center; gap:11px; }
+  .logo { width:38px; height:38px; border-radius:11px; background:var(--acid); color:var(--onacid);
+          display:grid; place-items:center; font-size:20px; font-weight:800; }
+  .brand b { font-family:ui-monospace,"SF Mono",Menlo,monospace; letter-spacing:1px; font-size:18px; }
+  nav a { color:var(--muted); margin-left:20px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+  h1 { font-size:34px; margin:40px 0 6px; }
+  .lede { color:var(--muted); margin:0 0 30px; }
+  .faq { background:var(--panel); border:1px solid var(--line); border-radius:16px;
+         padding:6px 22px; margin-bottom:30px; }
+  details { border-bottom:1px solid var(--line); padding:16px 0; }
+  details:last-child { border-bottom:none; }
+  summary { cursor:pointer; font-weight:600; font-size:16px; list-style:none; display:flex; justify-content:space-between; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"+"; color:var(--acid); font-size:20px; }
+  details[open] summary::after { content:"–"; }
+  details p, details ul { color:var(--muted); font-size:15px; margin:12px 0 4px; }
+  .contact { background:var(--panel2); border:1px solid var(--line); border-radius:16px;
+             padding:24px; text-align:center; margin-bottom:40px; }
+  .contact a.btn { display:inline-block; background:var(--acid); color:var(--onacid); font-weight:700;
+                   padding:12px 22px; border-radius:12px; margin-top:10px; }
+  footer { border-top:1px solid var(--line); padding:30px 0; color:var(--faint); font-size:13px; text-align:center; }
+  footer a { color:var(--muted); margin:0 8px; }
+</style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html" style="color:inherit">
+      <div class="logo">⚯</div>
+      <div><b>QRAFT</b><div class="mono" style="font-size:10px;letter-spacing:2px;color:var(--faint)">QR STUDIO</div></div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <h1>Support</h1>
+    <p class="lede">Answers to the most common questions. Still stuck? We reply to every email.</p>
+
+    <div class="faq">
+      <details open>
+        <summary>What's the difference between a static and a dynamic QR code?</summary>
+        <p>A <b>static</b> code has its content baked in permanently — type a link, get a code, done.
+        It works offline, never expires, and is completely free in QRAFT. A <b>dynamic</b> code points
+        to a short link you can <b>re-edit after printing</b> (change where it goes without reprinting),
+        and it can track scans. Dynamic codes need an internet connection and are a premium feature.</p>
+      </details>
+
+      <details>
+        <summary>What does "Error correction" mean?</summary>
+        <p>It sets how much of a code can be damaged, dirty, or covered and still scan:</p>
+        <ul>
+          <li><b>L (7%)</b> — least backup, simplest pattern</li>
+          <li><b>M (15%)</b> — great default for most codes</li>
+          <li><b>Q (25%)</b> — printed flyers &amp; stickers</li>
+          <li><b>H (30%)</b> — most backup; used automatically when you add a logo</li>
+        </ul>
+        <p>Higher levels survive more damage but make the pattern denser. If your code lives on a
+        screen and has no logo, M is perfect.</p>
+      </details>
+
+      <details>
+        <summary>My code has a logo in the middle — will it still scan?</summary>
+        <p>Yes. When you add a center logo, QRAFT automatically raises error correction to the highest
+        level (H) and clears a clean pad behind the logo, so the surrounding code stays readable.
+        QRAFT also scans the finished code back to confirm it works before you save it.</p>
+      </details>
+
+      <details>
+        <summary>I picked custom colors and now it won't scan. Why?</summary>
+        <p>Scanners rely on <b>brightness contrast</b> — dark code on a light background (or vice versa).
+        Colors that look different but have similar brightness (like red on green) can fail. If you see
+        a "may not scan" warning, increase the contrast: keep the code dark and the background light.</p>
+      </details>
+
+      <details>
+        <summary>What is the "Transparent background" option?</summary>
+        <p>It exports your code with no background fill, so it drops cleanly onto any surface or design.
+        The preview shows a checkerboard to indicate transparency. PNG and SVG exports keep the
+        transparency.</p>
+      </details>
+
+      <details>
+        <summary>I paid before and reinstalled — how do I get my purchase back?</summary>
+        <p>Open <b>Settings → Restore purchases</b> in the app. Your Pro unlock and any active
+        subscription are tied to your Apple ID and will be restored at no charge.</p>
+      </details>
+
+      <details>
+        <summary>How do I manage or cancel a subscription?</summary>
+        <p>Subscriptions are managed by Apple: open the iOS <b>Settings app → tap your name → Subscriptions</b>,
+        choose QRAFT, and change or cancel there. Static codes you already made keep working forever.</p>
+      </details>
+
+      <details>
+        <summary>Do you collect any of my data?</summary>
+        <p>No. Static codes and saved history live only on your device. There are no accounts, no
+        analytics SDKs, and no tracking. The only server interaction is if you opt into dynamic codes.
+        See our <a href="privacy.html">Privacy Policy</a> for the full detail.</p>
+      </details>
+    </div>
+
+    <div class="contact">
+      <div class="mono" style="font-size:12px;letter-spacing:1.5px;color:var(--faint)">STILL NEED HELP?</div>
+      <p style="margin:8px 0 0;color:var(--muted)">We usually reply within 1–2 business days.</p>
+      <a class="btn" href="mailto:essentialdevteam@gmail.com?subject=QRAFT%20Support">Email Support</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Essential Dev Team · QRAFT<br>
+    <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:essentialdevteam@gmail.com">Contact</a>
+  </footer>
+</body>
+</html>

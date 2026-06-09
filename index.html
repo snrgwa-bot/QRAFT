@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QRAFT — Privacy-first QR Code Studio for iOS</title>
+<meta name="description" content="QRAFT is a privacy-first QR code generator for iPhone. Every static code is created 100% on your device — no account, no tracking, no expiry. Style it, add a logo, export, and verify it scans.">
+<meta property="og:title" content="QRAFT — QR Code Studio">
+<meta property="og:description" content="Privacy-first QR codes, generated entirely on your device. No account. No expiry.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg:#0C0D10; --panel:#15171D; --panel2:#1C1F27; --line:#2A2E39;
+    --txt:#EEF1F6; --muted:#878D9C; --faint:#5B6172; --acid:#C6F24E; --onacid:#10130A;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:var(--bg); color:var(--txt); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--acid); text-decoration:none; }
+  .mono { font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 20px; }
+
+  header { display:flex; align-items:center; justify-content:space-between; padding:22px 0; }
+  .brand { display:flex; align-items:center; gap:11px; }
+  .logo { width:38px; height:38px; border-radius:11px; background:var(--acid); color:var(--onacid);
+          display:grid; place-items:center; font-size:20px; font-weight:800; }
+  .brand b { font-family:ui-monospace,"SF Mono",Menlo,monospace; letter-spacing:1px; font-size:18px; }
+  nav a { color:var(--muted); margin-left:20px; font-size:14px; }
+  nav a:hover { color:var(--txt); }
+
+  .hero { text-align:center; padding:70px 0 50px; }
+  .hero h1 { font-size:clamp(34px,6vw,58px); line-height:1.1; margin:0 0 18px; letter-spacing:-1px; }
+  .hero h1 span { color:var(--acid); }
+  .hero p { font-size:clamp(16px,2.4vw,20px); color:var(--muted); max-width:620px; margin:0 auto 30px; }
+  .cta { display:inline-flex; align-items:center; gap:10px; background:var(--acid); color:var(--onacid);
+         font-weight:700; padding:15px 26px; border-radius:14px; font-size:16px;
+         box-shadow:0 10px 30px rgba(198,242,78,.22); }
+  .cta:hover { transform:translateY(-2px); transition:.2s; }
+  .pill { display:inline-block; border:1px solid var(--line); color:var(--faint); border-radius:999px;
+          padding:6px 14px; font-size:12px; letter-spacing:1.5px; margin-bottom:22px; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; padding:24px 0 60px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:24px; }
+  .card .ico { width:40px; height:40px; border-radius:10px; background:var(--panel2);
+               display:grid; place-items:center; font-size:20px; margin-bottom:14px; }
+  .card h3 { margin:0 0 8px; font-size:17px; }
+  .card p { margin:0; color:var(--muted); font-size:14px; }
+
+  .band { background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .band .wrap { padding:50px 20px; text-align:center; }
+  .band h2 { font-size:28px; margin:0 0 12px; }
+  .band p { color:var(--muted); max-width:560px; margin:0 auto; }
+
+  .pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; padding:30px 0 60px; }
+  .price { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:24px; }
+  .price.featured { border-color:var(--acid); }
+  .price .tag { font-size:12px; letter-spacing:1.5px; color:var(--faint); }
+  .price .amt { font-size:30px; font-weight:800; margin:6px 0 2px; }
+  .price ul { margin:14px 0 0; padding-left:18px; color:var(--muted); font-size:14px; }
+
+  footer { border-top:1px solid var(--line); padding:30px 0; color:var(--faint); font-size:13px;
+           display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center; }
+  footer a { color:var(--muted); margin-right:16px; }
+  .section-title { font-size:13px; letter-spacing:2px; color:var(--faint); text-transform:uppercase;
+                   text-align:center; padding-top:40px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">⚯</div>
+        <div><b>QRAFT</b><div class="mono" style="font-size:10px;letter-spacing:2px;color:var(--faint)">QR STUDIO</div></div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="pill mono">PRIVACY-FIRST · ON-DEVICE</div>
+      <h1>QR codes that <span>actually scan</span>.<br>Built right on your iPhone.</h1>
+      <p>Every static QR code is generated 100% on your device — no account, no tracking, no expiry.
+         Style it, drop in your logo, export it, and QRAFT verifies it scans before you ever print.</p>
+      <a class="cta" href="#" id="appstore">Download on the App Store</a>
+    </section>
+  </div>
+
+  <div class="wrap" id="features">
+    <div class="section-title">What it does</div>
+    <div class="grid">
+      <div class="card"><div class="ico">🔒</div><h3>100% on-device</h3><p>Static codes never touch a server. What you type stays on your phone. No account, ever.</p></div>
+      <div class="card"><div class="ico">✅</div><h3>Auto scan-check</h3><p>Every code is scanned back and verified before you save it — no more "no usable data" surprises.</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>Make it yours</h3><p>Custom colors, rounded & dot module styles, a transparent background, and your logo in the center.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>9 code types</h3><p>Links, Wi-Fi, contacts, email, SMS, phone, location, calendar events, and plain text.</p></div>
+      <div class="card"><div class="ico">📤</div><h3>Export anywhere</h3><p>High-res PNG, crisp vector SVG, and print-ready PDF. Copy straight to the clipboard.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Dynamic codes</h3><p>Optional: edit where a printed code points anytime, and track scans — without reprinting.</p></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <h2>No expiry traps. No surprises.</h2>
+      <p>The QR category is full of apps that disable your printed codes until you pay a yearly fee.
+         QRAFT's static codes are free and permanent — the way QR codes should be.</p>
+    </div>
+  </div>
+
+  <div class="wrap" id="pricing">
+    <div class="section-title">Simple pricing</div>
+    <div class="pricing">
+      <div class="price">
+        <div class="tag mono">FREE</div>
+        <div class="amt">$0</div>
+        <ul><li>Unlimited static QR codes</li><li>All 9 code types</li><li>On-device, no account</li><li>Auto scan-check</li></ul>
+      </div>
+      <div class="price featured">
+        <div class="tag mono">PRO UNLOCK · ONE-TIME</div>
+        <div class="amt">$9.99</div>
+        <ul><li>Custom colors & shapes</li><li>Center logo embedding</li><li>SVG & PDF export</li><li>Transparent background</li></ul>
+      </div>
+      <div class="price">
+        <div class="tag mono">PRO + TRACKING</div>
+        <div class="amt">$4.99<span style="font-size:14px;color:var(--muted)">/mo</span></div>
+        <ul><li>Everything in Pro</li><li>Dynamic editable codes</li><li>Scan analytics</li><li>Or $24.99 / year</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <footer>
+      <div>© 2026 Essential Dev Team · QRAFT</div>
+      <div>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:essentialdevteam@gmail.com">Contact</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
