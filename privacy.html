@@ -75,9 +75,23 @@
   see or store your payment details. Apple’s privacy policy governs that transaction. There are
   no subscriptions and nothing auto-renews.</p>
 
-  <h2>6. No backend, no servers</h2>
-  <p>QRAFT has no backend and no servers. Nothing you enter is ever transmitted to us or any third
-  party, and there are no analytics, trackers, or third-party SDKs of any kind.</p>
+  <h2>6. Static codes: no backend</h2>
+  <p>Static QR codes are created entirely on your device. Nothing you enter to build them is ever
+  transmitted to us, and there are no analytics or trackers involved.</p>
+
+  <h2>7. Dynamic codes &amp; accounts (optional, subscription)</h2>
+  <p>If you choose to create <b>dynamic codes</b> (an optional, subscription feature), the following
+  applies:</p>
+  <ul>
+    <li><b>Account:</b> you sign in with Apple or email so your codes are saved to your account and
+      reachable from any device. We store your account identifier and email.</li>
+    <li><b>Your codes:</b> the destination URL and label you set are stored so the code can redirect.</li>
+    <li><b>Scan data:</b> when someone scans your dynamic code, we record a timestamp, an approximate
+      country, and the device/browser type (from the request's user-agent). We do <b>not</b> store
+      IP addresses, precise location, names, or any personal identity of the people scanning.</li>
+  </ul>
+  <p>This data exists only to power your editable redirects and scan analytics, and is tied to an
+  anonymous code identifier. If you only ever make static codes, none of this applies to you.</p>
 
   <h2>7. Children</h2>
   <p>QRAFT is not directed at children under 13 and does not knowingly collect data from them.</p>
