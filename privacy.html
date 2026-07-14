@@ -47,7 +47,7 @@
 
   <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: 9 June 2026</p>
+  <p class="muted">Last updated: July 13, 2026</p>
 
   <p>QRAFT ("the app") is a QR code generator published by Essential Dev Team. This policy
   explains exactly what data the app does and does not handle. The short version: the core
@@ -59,8 +59,9 @@
 
   <h2>2. Every QR code is generated on-device</h2>
   <p>Every QR code (URL, text, Wi-Fi, email, phone, SMS, contact, location, calendar
-  event) is created entirely on your device. The content you type to build a code never leaves
-  your device and is not transmitted to us or anyone else. QRAFT has no backend or servers.</p>
+  event) is created entirely on your device. The content you type to build a static code never leaves
+  your device and is not transmitted to us or anyone else. Only the optional dynamic-codes
+  feature uses a hosted backend, as described in section 7.</p>
 
   <h2>3. Saved history</h2>
   <p>Codes you choose to save are stored locally on your device only. They are never uploaded.
@@ -70,36 +71,54 @@
   <p>If you export a QR code to your Photos, the app requests permission to add that single
   image. QRAFT never reads, browses, or uploads your existing photos.</p>
 
-  <h2>5. Purchases</h2>
+  <h2>5. Location (when in use)</h2>
+  <p>If you create a <b>location-type QR code</b>, the app can ask for permission to use your
+  location while the app is in use, solely to fill in your current coordinates for that code.
+  This is optional — you can always enter coordinates manually — and your location is used
+  on-device to build the code; it is not sent to us.</p>
+
+  <h2>6. Purchases</h2>
   <p>The optional one-time Pro Unlock is processed entirely by Apple via the App Store. We never
   see or store your payment details. Apple’s privacy policy governs that transaction. There are
   no subscriptions and nothing auto-renews.</p>
 
-  <h2>6. Static codes: no backend</h2>
+  <h2>7. Static codes: no backend</h2>
   <p>Static QR codes are created entirely on your device. Nothing you enter to build them is ever
   transmitted to us, and there are no analytics or trackers involved.</p>
 
-  <h2>7. Dynamic codes &amp; accounts (optional, subscription)</h2>
+  <h2>8. Dynamic codes &amp; accounts (optional, subscription)</h2>
   <p>If you choose to create <b>dynamic codes</b> (an optional, subscription feature), the following
   applies:</p>
   <ul>
+    <li><b>Backend:</b> dynamic QR codes and scan analytics are powered by <b>Supabase</b>, a hosted
+      backend service (privacy policy:
+      <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>).
+      Your dynamic code destinations, scan counts, and analytics are stored there under your
+      anonymous account.</li>
     <li><b>Account:</b> you sign in with Apple or email so your codes are saved to your account and
       reachable from any device. We store your account identifier and email.</li>
     <li><b>Your codes:</b> the destination URL and label you set are stored so the code can redirect.</li>
     <li><b>Scan data:</b> when someone scans your dynamic code, we record a timestamp, an approximate
-      country, and the device/browser type (from the request's user-agent). We do <b>not</b> store
-      IP addresses, precise location, names, or any personal identity of the people scanning.</li>
+      country/city, and the device/browser type (from the request's user-agent). To derive the
+      approximate country/city, the scanner's IP address is processed <b>transiently</b> by
+      <b>ipwho.is</b>, a third-party IP geolocation service. We do <b>not</b> store raw IP addresses,
+      precise location, names, or any personal identity of the people scanning.</li>
   </ul>
   <p>This data exists only to power your editable redirects and scan analytics, and is tied to an
   anonymous code identifier. If you only ever make static codes, none of this applies to you.</p>
 
-  <h2>7. Children</h2>
+  <h2>9. Account &amp; data deletion</h2>
+  <p>The app includes an in-app <b>delete account</b> function that permanently removes your account,
+  your dynamic codes, and their scan analytics from our backend. You can also request deletion at any
+  time by emailing <a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a>.</p>
+
+  <h2>10. Children</h2>
   <p>QRAFT is not directed at children under 13 and does not knowingly collect data from them.</p>
 
-  <h2>8. Changes</h2>
+  <h2>11. Changes</h2>
   <p>If this policy changes, the updated version will be posted at this URL with a new date.</p>
 
-  <h2>9. Contact</h2>
+  <h2>12. Contact</h2>
   <p>Questions? Email <a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a>.</p>
   </div>
 
