@@ -63,6 +63,27 @@
   footer a { color:var(--muted); margin-right:16px; }
   .section-title { font-size:13px; letter-spacing:2px; color:var(--faint); text-transform:uppercase;
                    text-align:center; padding-top:40px; }
+
+  /* Large displays: the shell was pinned at 1000px, which on a 2560px monitor
+     reads as a narrow column adrift in empty space. This page sizes all type
+     in px, so scaling the root font size would do nothing — instead widen the
+     shell and widen the card tracks so the grids do not shred into thin
+     columns. The hero and band paragraphs keep their own narrower measure, so
+     line length stays readable however wide the window gets. */
+  @media (min-width: 1500px) {
+    .wrap { max-width:1280px; }
+    .grid { grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); }
+    .pricing { grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); }
+    .hero p { max-width:680px; }
+    .band p { max-width:620px; }
+  }
+  @media (min-width: 2000px) {
+    .wrap { max-width:1440px; }
+    .grid { grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); }
+    .pricing { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+    .hero p { max-width:720px; }
+    .band p { max-width:660px; }
+  }
 </style>
 </head>
 <body>

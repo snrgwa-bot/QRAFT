@@ -29,6 +29,19 @@
   .muted { color:var(--faint); font-size:.9rem; }
   footer { border-top:1px solid var(--line); padding:30px 0; color:var(--faint); font-size:13px; text-align:center; }
   footer a { color:var(--muted); margin:0 8px; }
+
+  /* Large displays: widen the header rail so it lines up with the rest of the
+     site on a 2560px monitor. The body copy keeps a deliberately narrow
+     measure — long legal text at full width is worse than the original
+     problem. */
+  @media (min-width: 1500px) {
+    header { max-width:1280px; }
+    .wrap { max-width:820px; }
+  }
+  @media (min-width: 2000px) {
+    header { max-width:1440px; }
+    .wrap { max-width:860px; }
+  }
 </style>
 </head>
 <body>
