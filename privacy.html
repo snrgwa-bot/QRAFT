@@ -60,7 +60,7 @@
 
   <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: October 5, 2026</p>
+  <p class="muted">Last updated: October 6, 2026</p>
 
   <p>QRAFT ("the app") is a QR code generator published by Essential Dev Team. This policy
   explains exactly what data the app does and does not handle. The short version: your QR codes are
@@ -74,13 +74,19 @@
 
   <h2>2. Every QR code is generated on-device</h2>
   <p>Every QR code (URL, text, Wi-Fi, email, phone, SMS, contact, location, calendar
-  event) is created entirely on your device. The content you type to build a static code never leaves
-  your device and is not transmitted to us or anyone else. Only the optional dynamic-codes
+  event) is created entirely on your device. The content you type to build a static code stays on
+  your device unless you choose to sync or save it to your account (section 3). Only the optional dynamic-codes
   feature uses a hosted backend, as described in section 8.</p>
 
   <h2>3. Saved history</h2>
-  <p>Codes you choose to save are stored locally on your device only. They are never uploaded.
-  Deleting a code, or deleting the app, removes that data.</p>
+  <p>Codes you save are stored on your device. They are only uploaded if you are signed in and turn
+  on <b>Settings → Privacy → Sync my saved codes</b> (off by default). With sync on, each saved code —
+  its name, type, content (which can include things like a Wi-Fi password or contact details), style
+  and folder — is stored in your account so it appears on qrft.app and your other devices. Turn sync
+  off at any time; <b>Remove synced copies from server</b> deletes the uploaded copies and keeps
+  everything on your phone. Codes you save on qrft.app are stored in your account in the same way.
+  Folders you create are stored in your account. Deleting a code, or deleting the app, removes the
+  local copy.</p>
 
   <h2>4. Photo library</h2>
   <p>If you export a QR code to your Photos, the app requests permission to add that single
@@ -98,8 +104,9 @@
   those transactions.</p>
 
   <h2>7. Static codes: no backend</h2>
-  <p>Static QR codes are created entirely on your device. Nothing you enter to build them is ever
-  transmitted to us.</p>
+  <p>Static QR codes are created entirely on your device (or in your browser on qrft.app). Nothing you
+  enter to build them is transmitted to us unless you turn on sync or save them to your account
+  (section 3).</p>
 
   <h2>8. Dynamic codes &amp; accounts (optional, subscription)</h2>
   <p>If you choose to create <b>dynamic codes</b> (an optional, subscription feature), the following
@@ -118,6 +125,24 @@
       approximate country/city, the scanner's IP address is processed <b>transiently</b> by
       <b>ipwho.is</b>, a third-party IP geolocation service. We do <b>not</b> store raw IP addresses,
       precise location, names, or any personal identity of the people scanning.</li>
+    <li><b>More scan details:</b> we also record the scanner's preferred language (two letters, e.g.
+      “es”), an approximate city-level position rounded to about 1 km, the time zone, and the weather
+      at that city at scan time. Scan requests to <b>qrft.app</b> pass through <b>Cloudflare</b>
+      (privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>),
+      which supplies the approximate location. Weather comes from the <b>Norwegian Meteorological
+      Institute (MET Norway)</b>, which receives only the rounded city coordinates — never anything
+      about the person scanning. A random first-party cookie tells new and returning scanners apart.</li>
+    <li><b>Review pages:</b> if you create a review-page code, people who scan it can give a star rating,
+      pick aspects, and optionally send you a private note and contact details they choose to share.
+      These are stored for you to read. To prevent abuse we keep a one-way hash of the visitor and IP
+      address for rate limiting; the raw IP address is not stored. If a scanner uses the optional
+      “help me write it” button, only their star rating, the aspects they picked and their language
+      are sent to <b>Google Gemini</b> to draft text they can edit (Google’s terms:
+      <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">ai.google.dev/gemini-api/terms</a>);
+      nothing is posted anywhere automatically.</li>
+    <li><b>qrft.app web studio:</b> when you sign in on the web, you see the same account data as in the
+      app. Its map uses map tiles from <b>OpenFreeMap</b> (OpenStreetMap data), which receives the
+      ordinary web requests your browser makes to load the map.</li>
   </ul>
   <p>This data exists only to power your editable redirects and scan analytics, and is tied to an
   anonymous code identifier. If you only ever make static codes, none of this applies to you.</p>
